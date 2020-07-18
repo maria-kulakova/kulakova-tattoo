@@ -1,0 +1,9 @@
+= simple_form_for [:admin, @facade.page] do |f|
+  = f.input :name
+  %h3 Sections
+  #sections
+    = f.simple_fields_for :sections do |section|
+      = render 'section_fields', f: section
+    .links
+      = link_to_add_association 'add section', f, :sections
+  = f.submit

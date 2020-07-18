@@ -1,0 +1,4 @@
+= simple_form_for [:admin, @facade.page, @facade.section] do |f|
+  = f.input :title
+  = f.input :text_content, as: :text
+  = f.button :submit

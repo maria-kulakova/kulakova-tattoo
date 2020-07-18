@@ -1,0 +1,5 @@
+.nested-fields
+  = f.input :position
+  = f.input :widget, collection: @facade.sections_for_select
+  - if @facade.edit_section_link_show?(f.object, 'edit') 
+    = link_to @facade.edit_section_link_title(f.object), edit_admin_page_section_path(@facade.page, f.object)

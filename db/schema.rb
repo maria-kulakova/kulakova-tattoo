@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_30_172314) do
+ActiveRecord::Schema.define(version: 2020_07_18_133226) do
+
+  create_table "pages", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "sections", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "widget", default: "photos_gallery"
+    t.bigint "page_id", null: false
+    t.integer "position"
+    t.text "text_content"
+    t.string "title"
+    t.index ["page_id"], name: "index_sections_on_page_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,4 +37,5 @@ ActiveRecord::Schema.define(version: 2020_06_30_172314) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "sections", "pages"
 end

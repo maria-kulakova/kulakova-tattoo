@@ -1,0 +1,38 @@
+AllCops:
+  TargetRubyVersion: 2.7
+  NewCops: disable
+  Exclude:
+    - bin/*
+    - vendor/**/*
+    - db/schema.rb
+    - db/seeds.rb
+    - db/migrate/*
+    - node_modules/**/*
+    - Guardfile
+
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120
+
+Layout/HashAlignment:
+  EnforcedColonStyle: table
+  EnforcedHashRocketStyle: table
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/*'
+    - 'spec/**/*'
+    - 'spec/***/**/*'
+    - 'spec/****/***/**/*'
+    - 'spec/*****/****/***/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+  ExcludedMethods: [
+    'describe', 'xdescribe', 'context', 'xcontext', 'it', 'xit', 'get', 'post', 'put', 'FactoryBot.define',
+    'factory', 'let', 'before', 'after', 'configure', 'shared_examples',
+    'resource', 'aggregate_failures', 'draw', 'collection', 'example', 'feature'
+  ]
