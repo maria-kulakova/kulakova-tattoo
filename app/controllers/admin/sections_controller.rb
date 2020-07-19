@@ -22,7 +22,13 @@ module Admin
       params.require(:section)
             .permit(:title,
                     :position,
-                    :text_content)
+                    :text_content,
+                    image_items_attributes: %i[
+                      id
+                      image
+                      position
+                      _destroy
+                    ])
     end
 
     def set_section

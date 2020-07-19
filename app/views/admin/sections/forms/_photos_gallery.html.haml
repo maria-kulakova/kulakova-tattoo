@@ -1,0 +1,14 @@
+.ui.grid
+  .ui.two.column.centered.grid
+    .column
+      = simple_form_for [:admin, @facade.page, @facade.section], html: { class: 'ui form' } do |f|
+        .field
+          .field
+            = f.input :title
+          %h3 Images
+          #image-items
+            = f.simple_fields_for :image_items do |image_item|
+              = render 'image_item_fields', f: image_item
+            .links
+              = link_to_add_association 'add image', f, :image_items, class: 'ui black basic button'
+        = f.button :submit, class: 'ui button'

@@ -32,6 +32,7 @@ gem 'cocoon', '~> 1.2', '>= 1.2.14'
 gem 'haml', '~> 5.1', '>= 5.1.2'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
 gem 'semantic-ui-sass', '~> 2.4', '>= 2.4.2.0'
+gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
