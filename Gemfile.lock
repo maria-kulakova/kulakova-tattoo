@@ -180,6 +180,11 @@ GEM
     ruby-progressbar (1.10.1)
     ruby_parser (3.14.2)
       sexp_processor (~> 4.9)
+    sass (3.7.4)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -190,6 +195,8 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    semantic-ui-sass (2.4.2.0)
+      sass (>= 3.2)
     sexp_processor (4.15.0)
     simple_form (5.0.2)
       actionpack (>= 5.0)
@@ -250,6 +257,7 @@ DEPENDENCIES
   rubocop (~> 0.88.0)
   rubocop-rails (~> 2.6)
   sass-rails (>= 6)
+  semantic-ui-sass (~> 2.4, >= 2.4.2.0)
   simple_form (~> 5.0, >= 5.0.2)
   spring
   spring-watcher-listen (~> 2.0.0)

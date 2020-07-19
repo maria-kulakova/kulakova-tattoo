@@ -1,4 +1,7 @@
-= simple_form_for [:admin, @facade.page, @facade.section] do |f|
-  = f.input :title
-  = f.input :text_content, as: :text
-  = f.button :submit
+.ui.grid
+  .ui.two.column.centered.grid
+    .column
+      = simple_form_for [:admin, @facade.page, @facade.section], html: { class: 'ui form' } do |f|
+        = f.input :title
+        = f.input :text_content, as: :text
+        = f.button :submit, class: 'ui button'

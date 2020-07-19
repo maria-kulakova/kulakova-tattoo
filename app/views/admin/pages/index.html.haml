@@ -1,3 +1,4 @@
-.ui.link.list
-  - @facade.pages.each do |page|
+- @facade.pages.each do |page|
+  .ui.link.list.huge
     .item= link_to "#{page.name} edit", edit_admin_page_path(page)
+
