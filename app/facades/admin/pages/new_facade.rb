@@ -7,7 +7,7 @@ module Admin
 
       ACTION = 'new'
 
-      def initialize(page = Page.new)
+      def initialize(page: Page.new)
         @page = page
       end
 

@@ -9,4 +9,10 @@ Rails.application.routes.draw do
       resources :sections
     end
   end
+
+  namespace :api do
+    resources :sections, only: %i[show]
+  end
+
+  resources :pages, only: %i[show index]
 end

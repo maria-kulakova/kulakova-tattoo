@@ -5,7 +5,7 @@ module Admin
     before_action :set_section, only: %i[edit update]
 
     def edit
-      @facade = Sections::EditFacade.new(@section)
+      @facade = Sections::EditFacade.new(section: @section)
     end
 
     def update

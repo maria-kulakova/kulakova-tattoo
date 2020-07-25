@@ -7,7 +7,7 @@ module Admin
 
       ACTION = 'edit'
 
-      def initialize(page)
+      def initialize(page:)
         @page = page
       end
 

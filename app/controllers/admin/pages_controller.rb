@@ -2,7 +2,7 @@
 
 module Admin
   class PagesController < ApplicationController
-    before_action :set_page, only: %i[edit update]
+    before_action :set_page, only: %i[edit update destroy]
 
     def index
       @facade = Pages::IndexFacade.new
@@ -10,7 +10,7 @@ module Admin
 
     def new
       @page   = Page.new
-      @facade = Pages::NewFacade.new(@page)
+      @facade = Pages::NewFacade.new(page: @page)
     end
 
     def create
@@ -21,7 +21,7 @@ module Admin
     end
 
     def edit
-      @facade = Pages::EditFacade.new(@page)
+      @facade = Pages::EditFacade.new(page: @page)
     end
 
     def update
@@ -30,11 +30,18 @@ module Admin
       redirect_to edit_admin_page_path(@page), alert: @page.errors.full_messages.to_sentence
     end
 
+    def destroy
+      return redirect_to admin_pages_path, notice: 'Page is deleted!' if @page.destroy
+
+      redirect_to admin_pages_path, alert: 'Page is not deleted!'
+    end
+
     private
 
     def page_params
       params.require(:page)
             .permit(:name,
+                    :position,
                     sections_attributes: %i[
                       id
                       widget

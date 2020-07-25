@@ -4,6 +4,8 @@
       = simple_form_for [:admin, @facade.page], html: { class: 'ui form' } do |f|
         .field
           .field
+            = f.input :position
+          .field
             = f.input :name
           %h3 Sections
           #sections

@@ -1,4 +1,5 @@
 const { environment } = require('@rails/webpacker')
+const pug = require('./loaders/pug')
 
 const webpack = require('webpack')
 environment.plugins.prepend('Provide',
@@ -8,5 +9,7 @@ environment.plugins.prepend('Provide',
 		Popper: ['popper.js', 'default']
   })
 )
+
+environment.loaders.prepend('pug', pug)
 
 module.exports = environment

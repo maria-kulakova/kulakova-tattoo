@@ -27,4 +27,8 @@ class ImageItem < ApplicationRecord
   def gallery_image
     image.variant(resize: '400x400!').processed
   end
+
+  def gallery_image_url
+    Rails.application.routes.url_helpers.rails_representation_url(gallery_image, only_path: true)
+  end
 end

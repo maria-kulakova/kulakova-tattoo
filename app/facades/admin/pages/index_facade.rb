@@ -5,7 +5,7 @@ module Admin
     class IndexFacade
       attr_reader :pages
 
-      def initialize(pages = Page.all)
+      def initialize(pages: Page.all)
         @pages = pages
       end
     end

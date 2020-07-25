@@ -5,7 +5,7 @@ module Admin
     class EditFacade
       attr_reader :section, :page
 
-      def initialize(section)
+      def initialize(section:)
         @section = section
         @page    = section.page
       end
