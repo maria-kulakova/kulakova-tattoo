@@ -1,0 +1,5 @@
+- @facade.pages.each do |page|
+  .ui.link.list.huge
+    .item= link_to "#{page.name} edit", edit_admin_page_path(page)
+    .item= link_to "#{page.name} destroy", admin_page_path(page), method: :delete, data: { confirm: 'Are you sure?' }
+

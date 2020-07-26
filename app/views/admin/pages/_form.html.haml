@@ -1,0 +1,16 @@
+.container
+  .row
+    .columns
+      = simple_form_for [:admin, @facade.page], html: { class: 'ui form' } do |f|
+        .field
+          .field
+            = f.input :position
+          .field
+            = f.input :name
+          %h3 Sections
+          #sections
+            = f.simple_fields_for :sections do |section|
+              = render 'section_fields', f: section
+            .links
+              = link_to_add_association 'add section', f, :sections, class: 'ui black basic button'
+        = f.button :submit, class: 'fluid ui green button'

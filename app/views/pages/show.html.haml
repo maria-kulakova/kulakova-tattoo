@@ -1,0 +1,4 @@
+.container
+- @facade.sections.each do |section|
+  .row
+    = render @facade.widget(section), section: section
